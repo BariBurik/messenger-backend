@@ -1,1 +1,8 @@
 .venv
+.gitignore
+__pycache__
+db.sqlite3
+.idea
+.pytest_cache
+.coverage
+.env
