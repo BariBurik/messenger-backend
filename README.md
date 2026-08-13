@@ -130,7 +130,7 @@ This repository contains only the backend part of the Messenger project.
 
 To run the complete application, use it together with:
 
-<a href='https://github.com/BariBurik/Messenger_Fullstack_Frontend'>Messenger_Frontend</a>
+<a href='https://github.com/BariBurik/messenger-frontend'>messenger-frontend</a>
 
 ## Notes
 
