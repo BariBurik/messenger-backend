@@ -1,8 +1,28 @@
-.venv
-.gitignore
-__pycache__
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# Django
 db.sqlite3
-.idea
-.pytest_cache
-.coverage
+media/
+
+# Environment
 .env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+
+# Tests
+.pytest_cache/
+.coverage
+
+# OS
+.DS_Store
+Thumbs.db
