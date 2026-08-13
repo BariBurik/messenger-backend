@@ -54,8 +54,9 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -139,6 +140,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
@@ -167,19 +170,6 @@ CORS_ALLOW_HEADERS = [
 
 CSRF_TRUSTED_ORIGINS = [
     FRONTEND_URL
-]
-
-CORS_ALLOW_CREDENTIALS = True  # Разрешаем отправку cookie, включая CSRF-токен
-CORS_ALLOW_HEADERS = [
-    'content-type',
-    'authorization',
-    'x-csrftoken',  # Добавляем поддержку CSRF токенов
-    'accept',
-    'origin',
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000'
 ]
 
 CSRF_COOKIE_NAME = 'csrftoken'
