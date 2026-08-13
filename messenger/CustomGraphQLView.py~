@@ -39,10 +39,11 @@ class CustomAsyncGraphQLView(AsyncGraphQLView):
                 response.set_cookie(
                     "access-token",
                     request._access_token,
+                    domain="localhost",
                     path="/",
                     httponly=True,
-                    samesite='Lax' if settings.DEBUG else 'None',
-                    secure=not settings.DEBUG
+                    samesite="Lax",
+                    secure=False
                 )
                 response.set_cookie(
                     "refresh-token",

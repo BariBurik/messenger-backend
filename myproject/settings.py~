@@ -186,13 +186,7 @@ CSRF_COOKIE_NAME = 'csrftoken'
 CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 CSRF_COOKIE_HTTPONLY = False
 
-CSRF_COOKIE_SECURE = not DEBUG
-SESSION_COOKIE_SECURE = not DEBUG
-
-SESSION_COOKIE_SAMESITE = 'Lax' if DEBUG else 'None'
-CSRF_COOKIE_SAMESITE = 'Lax' if DEBUG else 'None'
-
-CORS_EXPOSE_HEADERS = ['Set-Cookie', 'Date']
+CORS_EXPOSE_HEADERS = ["Set-Cookie", "Date"]
 
 GRAPHENE = {
     "SCHEMA": "messenger.graphene.graphene_schema",
