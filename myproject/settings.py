@@ -151,7 +151,7 @@ ASGI_APPLICATION = "myproject.asgi.application"
 
 FRONTEND_URL = os.getenv(
     'FRONTEND_URL',
-    'http://localhost:3000'
+    'https://messenger-frontend-dwpz.onrender.com'
 )
 
 CORS_ALLOWED_ORIGINS = [
