@@ -149,13 +149,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #
 ASGI_APPLICATION = "myproject.asgi.application"
 
-FRONTEND_URL = os.getenv(
-    'FRONTEND_URL',
-    'https://messenger-frontend-dwpz.onrender.com'
-)
-
 CORS_ALLOWED_ORIGINS = [
-    FRONTEND_URL
+    'http://localhost:3000',
+    'https://messenger-frontend-dwpz.onrender.com',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -163,7 +159,8 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = list(default_headers)
 
 CSRF_TRUSTED_ORIGINS = [
-    FRONTEND_URL
+    'http://localhost:3000',
+    'https://messenger-frontend-dwpz.onrender.com',
 ]
 
 CSRF_COOKIE_NAME = 'csrftoken'
