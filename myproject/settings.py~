@@ -187,8 +187,6 @@ GRAPHENE = {
 
 R2_PUBLIC_URL = os.getenv('R2_PUBLIC_URL')
 
-MEDIA_URL = f"{R2_PUBLIC_URL}/"
-
 STORAGES = {
     "default": {
         "BACKEND": "storages.backends.s3.S3Storage",
@@ -208,6 +206,8 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
+
+MEDIA_URL = f"{R2_PUBLIC_URL}/"
 
 AUTH_USER_MODEL = 'messenger.User'
 
