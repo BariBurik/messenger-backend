@@ -40,29 +40,14 @@ class UserType(DjangoObjectType):
 
 
 class ChatroomType(DjangoObjectType):
-    avatar = graphene.String()
-
     class Meta:
         model = Chatroom
-        fields = (
-            'id',
-            'name',
-            'participants',
-            'avatar',
-            'max_participants',
-            'created_at',
-            'updated_at'
-        )
+        fields = ('id', 'name', 'participants', 'avatar', 'max_participants', 'created_at', 'updated_at')
 
     participants = graphene.List(lambda: UserType)
 
     def resolve_participants(self, info):
         return self.participants.all()
-
-    def resolve_avatar(self, info):
-        if self.avatar:
-            return self.avatar.url
-        return None
 
 
 class ChatType(DjangoObjectType):
