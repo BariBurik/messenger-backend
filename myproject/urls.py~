@@ -1,9 +1,10 @@
 import logging
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve
 from strawberry.django.views import AsyncGraphQLView
 
 from messenger.CustomGraphQLView import CustomGraphQLView
@@ -15,10 +16,15 @@ from messenger.csrf import get_csrf_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-path('csrf/', get_csrf_token, name='csrf'),
+    path('csrf/', get_csrf_token, name='csrf'),
     # Graphene маршруты
     path("graphql/graphene/", CustomGraphQLView.as_view(graphiql=True, schema=graphene_schema)),
     # Strawberry маршруты
     path("graphql/strawberry/", AsyncGraphQLView.as_view(schema=strawberry_schema)),
     path('delete-http-only-cookie/', delete_http_only_cookie, name='delete_http_only_cookie'),
+    re_path(
+        r'^media/(?P<path>.*)$',
+        serve,
+        {'document_root': settings.MEDIA_ROOT}
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
