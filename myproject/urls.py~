@@ -15,7 +15,7 @@ from messenger.csrf import get_csrf_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('csrf/', get_csrf_token, name='csrf'),
+path('csrf/', get_csrf_token, name='csrf'),
     # Graphene маршруты
     path("graphql/graphene/", CustomGraphQLView.as_view(graphiql=True, schema=graphene_schema)),
     # Strawberry маршруты
