@@ -156,7 +156,7 @@ class Query:
                 chatroom=ChatroomTypeStrawberry(
                     id=message.chatroom.id,
                     name=message.chatroom.name,
-                    avatar=message.chatroom.avatar.url if message.chatroom.avatar else None,
+                    avatar=message.chatroom.avatar.url if message.chatroom.avatar else None,,
                     participants=participants,
                     max_participants=message.chatroom.max_participants,
                     updated_at=message.chatroom.updated_at,
@@ -167,7 +167,7 @@ class Query:
                     name=message.user.name,
                     email=message.user.email,
                     password=message.user.password,
-                    avatar=message.user.avatar.url if message.user.avatar else None,
+                    avatar=message.user.avatar.url if message.user.avatar else None,,
                     chatroom=user_chatrooms,
                     created_at=message.user.created_at,
                     updated_at=message.user.updated_at
@@ -250,7 +250,7 @@ class Subscription:
                     chatroom=ChatroomTypeStrawberry(
                         id=message.chatroom.id,
                         name=message.chatroom.name,
-                        avatar=message.chatroom.avatar.url if message.chatroom.avatar else None,
+                        avatar=message.chatroom.avatar.url if message.chatroom.avatar else None,,
                         participants=message.chatroom.participants.all(),
                         max_participants=message.chatroom.max_participants,
                         updated_at=message.chatroom.updated_at,
@@ -261,7 +261,7 @@ class Subscription:
                         name=message.user.name,
                         email=message.user.email,
                         password=message.user.password,
-                        avatar=message.user.avatar.url if message.user.avatar else None,
+                        avatar=message.user.avatar.url if message.user.avatar else None,,
                         chatroom=message.user.chatroom.all(),
                         created_at=message.user.created_at,
                         updated_at=message.user.updated_at
